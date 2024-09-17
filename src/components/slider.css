@@ -1,0 +1,79 @@
+.container {
+  max-width: 124rem;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
+
+.heading {
+  padding: 1rem 0;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.swiper_container {
+  height: 30rem; /* Define constant height */
+  padding: 2rem 0;
+  position: relative;
+}
+
+.swiper-slide {
+  width: 20rem; /* Adjust slide width */
+  height: 100%; /* Full height relative to the container */
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%; /* Full width for the image */
+  height: 100%; /* Constant height for the image */
+  border-radius: 2rem;
+  object-fit: cover; /* Ensure the image covers the entire slide without distortion */
+}
+
+@media (max-width: 1200px) {
+  .swiper_container {
+    height: 28rem; /* Adjust container height for smaller screens */
+  }
+  .swiper-slide {
+    width: 18rem; /* Adjust slide width */
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper_container {
+    height: 25rem; /* Further adjust container height */
+  }
+  .swiper-slide {
+    width: 16rem; /* Adjust slide width */
+  }
+}
+
+@media (max-width: 576px) {
+  .swiper_container {
+    height: 22rem; /* Final adjustment for mobile screens */
+  }
+  .swiper-slide {
+    width: 14rem; /* Adjust slide width */
+  }
+}
+
+.slider-controler {
+  position: relative;
+  bottom: 1.5rem; /* Add gap between slider and controls */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.slider-controler .swiper-button-next,
+.slider-controler .swiper-button-prev {
+  width: 3rem; /* Adjust button size */
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.swiper-pagination {
+  position: relative;
+  bottom: 1.5rem; /* Add gap between pagination and controls */
+  width: 10rem;
+}
