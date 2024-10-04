@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { IconContext } from "react-icons";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [nav, setNav] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -29,9 +36,80 @@ const Navbar = () => {
             <Link to="/products">
               <div className="text-gray-700 hover:text-gray-900">Product</div>
             </Link>
-            <Link to="/services">
-              <div className="text-gray-700 hover:text-gray-900">Services</div>
-            </Link>
+
+            {/* Services Dropdown */}
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="flex flex-row gap-1 items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none"
+              >
+                <div>Services</div>
+                <IconContext.Provider value={{ color: "grey" }}>
+                  <MdKeyboardArrowDown />
+                </IconContext.Provider>
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute mt-2 w-48 bg-white border border-gray-200 shadow-lg z-10">
+                  <Link
+                    onClick={(e) => {
+                      setNav("fab");
+                      setIsDropdownOpen(false);
+                    }}
+                    to="/services/fabrication"
+                    className={
+                      nav === "fab"
+                        ? "block px-4 py-2 text-gray-700 bg-gray-100"
+                        : "block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    }
+                  >
+                    Fabrication
+                  </Link>
+                  <Link
+                    onClick={(e) => {
+                      setNav("rec");
+                      setIsDropdownOpen(false);
+                    }}
+                    to="/services/recycling"
+                    className={
+                      nav === "rec"
+                        ? "block px-4 py-2 text-gray-700 bg-gray-100"
+                        : "block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    }
+                  >
+                    Recycling
+                  </Link>
+                  <Link
+                    onClick={(e) => {
+                      setNav("del");
+                      setIsDropdownOpen(false);
+                    }}
+                    to="/services/delivery"
+                    className={
+                      nav === "del"
+                        ? "block px-4 py-2 text-gray-700 bg-gray-100"
+                        : "block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    }
+                  >
+                    Delivery
+                  </Link>
+                  <Link
+                    onClick={(e) => {
+                      setNav("fin");
+                      setIsDropdownOpen(false);
+                    }}
+                    to="/services/finances"
+                    className={
+                      nav === "fin"
+                        ? "block px-4 py-2 text-gray-700 bg-gray-100"
+                        : "block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    }
+                  >
+                    Finances
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link to="/contact">
               <div className="text-gray-700 hover:text-gray-900">
                 Contact Us
@@ -93,9 +171,39 @@ const Navbar = () => {
             <Link to="/products">
               <div className="text-gray-700 hover:text-gray-900">Product</div>
             </Link>
-            <Link to="/services">
-              <div className="text-gray-700 hover:text-gray-900">Services</div>
-            </Link>
+
+            {/* Mobile Services Dropdown */}
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="text-gray-700 hover:text-gray-900 focus:outline-none"
+              >
+                Services
+              </button>
+              {isDropdownOpen && (
+                <div className="mt-2 w-48 bg-white border border-gray-200 shadow-lg z-10">
+                  <Link
+                    to="/services/design"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >
+                    Design
+                  </Link>
+                  <Link
+                    to="/services/development"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >
+                    Development
+                  </Link>
+                  <Link
+                    to="/services/marketing"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >
+                    Marketing
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link to="/contact">
               <div className="text-gray-700 hover:text-gray-900">
                 Contact Us

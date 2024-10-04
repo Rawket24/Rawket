@@ -28,7 +28,6 @@ const Products = () => {
   return (
     <div>
       <div>
-        <Navbar />
         <div>
           <section id="products1" className="bg-white py-5 md:py-10">
             <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center">

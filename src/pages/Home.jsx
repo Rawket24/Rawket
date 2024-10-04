@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Navbar />
         <section id="home" className="bg-white py-5 md:py-10">
           <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center">
             {/* Text Content */}
@@ -129,7 +128,7 @@ const Home = () => {
                 </div>
                 <div className="flex-1 mt-4 md:mt-0 md:pl-4 text-left">
                   <h3 className="text-[24px] text-black font-bold mb-2">
-                    Custom Service
+                    Finance
                   </h3>
                   <p className="text-gray-600">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -152,6 +151,7 @@ const Home = () => {
             <Slider />
           </div>
         </section>
+        <section></section>
       </div>
     </div>
   );
