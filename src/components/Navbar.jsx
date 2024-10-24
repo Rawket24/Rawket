@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import { useAuth } from "../context/AuthContext";
+import { useUser } from "../context/UserContext";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IconContext } from "react-icons";
@@ -6,6 +10,73 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [nav, setNav] = useState("");
+  const [retryCount, setRetryCount] = useState(0);
+  const { user, setUser } = useUser();
+  const [googleScriptLoaded, setGoogleScriptLoaded] = useState(false);
+  const { signIn, setSignIn } = useAuth();
+  const navigate = useNavigate();
+
+  function handleCallbackResponse(response) {
+    const info = jwtDecode(response.credential);
+    setUser({
+      name: info.name,
+      email: info.email,
+      profile_pic: info.picture,
+    });
+    setSignIn(true);
+    console.log(user);
+  }
+
+  const initializeGoogleSignIn = useCallback(() => {
+    if (window.google && window.google.accounts && window.google.accounts.id) {
+      window.google.accounts.id.initialize({
+        client_id:
+          "407841739577-7pnfru7if37rf9tgtepej58nas4j77kd.apps.googleusercontent.com",
+        callback: handleCallbackResponse,
+        itp_support: true,
+        cancel_on_tap_outside: false,
+      });
+
+      const signInButton = document.getElementById("signin");
+      if (signInButton) {
+        window.google.accounts.id.renderButton(signInButton, {
+          theme: "outline",
+          size: "large",
+        });
+        window.google.accounts.id.prompt();
+      } else {
+        console.error("Sign-in button element not found");
+      }
+    } else {
+      console.error(
+        "Failed to initialize Google Sign-In after multiple attempts"
+      );
+    }
+  }, [retryCount]);
+
+  useEffect(() => {
+    if (googleScriptLoaded) {
+      initializeGoogleSignIn();
+    }
+  }, [googleScriptLoaded, initializeGoogleSignIn]);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://accounts.google.com/gsi/client";
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      setGoogleScriptLoaded(true);
+    };
+    script.onerror = () => {
+      console.error("Failed to load Google Sign-In script");
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -23,7 +94,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/">
               <div className="text-2xl md:text-[48px] text-myblue font-black">
-                OkSent
+                Rawket
               </div>
             </Link>
           </div>
@@ -115,16 +186,23 @@ const Navbar = () => {
                 Contact Us
               </div>
             </Link>
+            <div>
+              {!signIn && (
+                <div
+                  id="signin"
+                  className="items-center text-center justify-center"
+                ></div>
+              )}
+              {signIn && (
+                <div className="flex flex-row gap-4 items-center justify-center">
+                  <img src={user.picture} className="h-8 rounded-full" />
+                  <div>{user.name}</div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Login Button */}
-          <div className="hidden md:flex items-center text-base font-medium">
-            <Link to="/login">
-              <div className="bg-myblue text-white px-10 py-2 rounded-lg hover:bg-blue-600">
-                Login
-              </div>
-            </Link>
-          </div>
 
           {/* Hamburger Icon for Mobile */}
           <div className="flex items-center md:hidden">
