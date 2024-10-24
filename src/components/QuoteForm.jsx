@@ -1,9 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 
 const QuoteForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    pincode: "",
+    company: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("");
+
+  // Your SheetDB API URL
+  const SHEETDB_API_URL = "https://sheetdb.io/api/v1/yu8udmpjaytl5";
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("");
+
+    try {
+      // Format the data according to SheetDB requirements
+      const formattedData = {
+        name: formData.name,
+        email: formData.email,
+        contact: formData.contact,
+        pincode: formData.pincode,
+        company: formData.company,
+        message: formData.message,
+      };
+
+      const response = await fetch(SHEETDB_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          data: formattedData, // Send single object instead of array
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("Quotation requested successfully!");
+        // Clear the form
+        setFormData({
+          name: "",
+          email: "",
+          contact: "",
+          pincode: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        const errorData = await response.json();
+        console.error("Submission error:", errorData);
+        setSubmitStatus("Error submitting your quote. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setSubmitStatus("Error submitting your quote. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div>
-      <section className=" py-12">
+      <section className="py-12">
         <div className="text-[40px] font-bold text-center text-myblue">
           Get a Quotation
         </div>
@@ -11,7 +84,7 @@ const QuoteForm = () => {
           {/* Left Section: Illustration */}
           <div className="w-full md:w-1/2 flex justify-center">
             <img
-              src="/Images/quote.png" // Replace with actual image path
+              src="/Images/quote.png"
               alt="Logistics illustration"
               className="w-80 md:w-full"
             />
@@ -22,7 +95,18 @@ const QuoteForm = () => {
             <h2 className="text-white text-2xl font-bold mb-6">
               Fill the details below to contact us
             </h2>
-            <form>
+            {submitStatus && (
+              <div
+                className={`p-4 mb-4 rounded ${
+                  submitStatus.includes("Error")
+                    ? "bg-red-100 text-red-700"
+                    : "bg-green-100 text-green-700"
+                }`}
+              >
+                {submitStatus}
+              </div>
+            )}
+            <form onSubmit={handleSubmit}>
               {/* Name Field */}
               <div className="mb-4">
                 <label
@@ -34,8 +118,11 @@ const QuoteForm = () => {
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Name Surname"
                   className="w-full px-3 py-2 rounded-md shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
                 />
               </div>
 
@@ -50,8 +137,11 @@ const QuoteForm = () => {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="name.123@email.com"
                   className="w-full px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
                 />
               </div>
 
@@ -67,8 +157,11 @@ const QuoteForm = () => {
                   <input
                     type="text"
                     id="contact"
+                    value={formData.contact}
+                    onChange={handleChange}
                     placeholder="+91 123456789"
                     className="w-full px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
                   />
                 </div>
 
@@ -82,6 +175,8 @@ const QuoteForm = () => {
                   <input
                     type="text"
                     id="pincode"
+                    value={formData.pincode}
+                    onChange={handleChange}
                     placeholder="000000"
                     className="w-full px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -99,6 +194,8 @@ const QuoteForm = () => {
                 <input
                   type="text"
                   id="company"
+                  value={formData.company}
+                  onChange={handleChange}
                   placeholder="Company Name"
                   className="w-full px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -106,25 +203,28 @@ const QuoteForm = () => {
               <div className="mb-6">
                 <label
                   className="block text-white text-sm font-semibold mb-2"
-                  htmlFor="company"
+                  htmlFor="message"
                 >
                   Message
                 </label>
                 <textarea
                   id="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="message"
                   className="w-full px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows="4" // You can adjust this value to change the size of the textarea
-                ></textarea>
+                  rows="4"
+                />
               </div>
 
               {/* Submit Button */}
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-gray-900 text-white font-bold py-2 px-6 rounded-md hover:bg-gray-600  transition duration-300"
+                  disabled={isSubmitting}
+                  className="bg-gray-900 text-white font-bold py-2 px-6 rounded-md hover:bg-gray-600 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Contact Us
+                  {isSubmitting ? "Submitting..." : "Contact Us"}
                 </button>
               </div>
             </form>

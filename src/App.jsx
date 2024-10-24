@@ -10,6 +10,8 @@ import Delivery from "./pages/Delivery";
 import Recycling from "./pages/Recycling";
 import Root from "./pages/Root";
 import Contact from "./pages/Contact";
+import ProductDetails from "./pages/ProductDetails";
+
 const App = () => {
   return (
     <Router>
@@ -23,7 +25,8 @@ const App = () => {
           <Route path="services/finances" element={<Finances />} />
           <Route path="services/delivery" element={<Delivery />} />
           <Route path="products" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="/product/:productId" component={<ProductDetails />} />
         </Route>
       </Routes>
     </Router>
