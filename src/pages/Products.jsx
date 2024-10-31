@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import productsData from "../data/productsData.json"; // Adjust the path if necessary
 
 const Products = () => {
   const categories = ["Mild Steel", "Stainless Steel"];
   const [selectedCategory, setSelectedCategory] = useState("Mild Steel");
+  const navigate = useNavigate();
 
   // Determine the products to display based on the selected category
   const getCategoryProducts = () => {
@@ -17,12 +19,16 @@ const Products = () => {
     return [];
   };
 
+  const handleProductClick = (productId) => {
+    const category =
+      selectedCategory === "Mild Steel" ? "mildsteel" : "stainless";
+    navigate(`/product/${category}/${productId}`);
+  };
   return (
     <div>
       <div className="pb-10">
         <section id="products1" className="bg-white py-5 md:py-10">
           <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center">
-            {/* Text Content */}
             <div className="md:w-1/2 pl-10 flex flex-col">
               <h1 className="text-[40px] md:text-[60px] font-bold text-gray-900 mb-4 leading-tight">
                 Metal Products On
@@ -34,7 +40,6 @@ const Products = () => {
               </p>
             </div>
 
-            {/* Image Content */}
             <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
               <img
                 src="/Images/producthome.png"
@@ -71,7 +76,11 @@ const Products = () => {
             <div className="w-3/4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {getCategoryProducts().map((product, index) => (
-                  <div key={index} className="bg-white p-4 rounded shadow">
+                  <div
+                    key={index}
+                    className="bg-white p-4 rounded shadow cursor-pointer"
+                    onClick={() => handleProductClick(product.productId)}
+                  >
                     <img
                       src={product.image}
                       alt={product.name}
@@ -79,7 +88,6 @@ const Products = () => {
                     />
                     <div className="flex justify-between items-center">
                       <span className="font-medium">{product.name}</span>
-                      <FaHeart className="text-gray-400 hover:text-red-500 cursor-pointer" />
                     </div>
                     <p className="text-sm text-gray-600 mt-2 line-clamp-2">
                       {product.description}

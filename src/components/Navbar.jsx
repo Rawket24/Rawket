@@ -194,8 +194,8 @@ const Navbar = () => {
                 ></div>
               )}
               {signIn && (
-                <div className="flex flex-row gap-4 items-center justify-center">
-                  <img src={user.picture} className="h-8 rounded-full" />
+                <div className="flex border-[1px] border-gray-400 rounded-2xl px-5 py-2 flex-row gap-4 items-center justify-center">
+                  <img src={user.profile_pic} className="h-10 rounded-full" />
                   <div>{user.name}</div>
                 </div>
               )}

@@ -49,7 +49,7 @@
           "description": "Mild Steel (MS) channels, featuring a U-shaped cross-section, are essential structural components characterized by high strength and rigidity, commonly used in construction, manufacturing, and engineering for applications such as load-bearing frameworks, support systems, and bracing due to their excellent mechanical properties and ease of fabrication.",
           "brands": ["TATA", "SAIL", "Rathi", "JSW"],
           "grades": ["ASTM A36", "S235JR", "S355J2"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "width": "40 mm to 400 mm",
             "height": "20 mm to 200 mm",
@@ -65,7 +65,7 @@
           "description": "Mild Steel Beams & Joists, commonly known as steel I-beams or H-beams, are essential structural elements characterized by their I or H-shaped cross-section. These beams are designed to support heavy loads and provide excellent stability and strength in construction projects.",
           "brands": ["TATA", "SAIL", "Rathi", "JSW"],
           "grades": ["IS:2062 E250", "S235JR", "S355J2", "ASTM A992"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "width": "50mm to 210 mm",
             "height": "100 mm to 900 mm",
@@ -86,7 +86,7 @@
           "description": "Mild Steel (MS) angles, featuring an L-shaped profile and composed of low carbon steel with alloying elements like manganese and silicon, are widely employed in construction and manufacturing for their structural support capabilities.",
           "brands": ["TATA", "SAIL", "JSPL", "JSW"],
           "grades": ["S235JR", "S355J2", "ASTM A36", "EN 10025"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "width": "20 mm to 200 mm",
             "height": "20 mm to 200 mm",
@@ -107,7 +107,7 @@
           "description": "Mild Steel (MS) square pipes, characterized by their hollow, square cross-section and composed of low-carbon steel, are integral structural elements widely utilized across industries for their robustness and durability.",
           "brands": ["TATA", "SAIL", "JSPL", "JSW", "Apollo"],
           "grades": ["ASTM A36", "EN1 0025", "GB & JIS"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "size": "10 mm × 10 mm to 250 mm × 250 mm",
             "thickness": "1 mm to 10 mm",
@@ -121,7 +121,7 @@
           "description": "Mild Steel (MS) round bars are cylindrical steel bars known for their excellent strength, ductility, and weldability, making them widely used in construction, manufacturing, and engineering applications.",
           "brands": ["TATA", "SAIL", "JSW", "ISI"],
           "grades": ["ASTM A36", "EN1 0025", "IS 2062"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "diameter": "5 mm to 250 mm",
             "length": "6 meters and 12 meters, custom lengths available"
@@ -179,7 +179,7 @@
           "description": "Stainless Steel sheets and plates are flat steel products made from high-quality stainless steel, known for their exceptional strength, durability, and resistance to corrosion.",
           "brands": ["SAIL", "JSL"],
           "grades": ["304/304L", "316/316L", "430", "201"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "length": "As per requirement",
             "width": "1000mm - 2000mm",
@@ -194,7 +194,7 @@
           "description": "SS coils are flat-rolled steel products made from high-quality stainless steel, known for their exceptional strength, durability, and corrosion resistance.",
           "brands": ["JSL", "SAIL"],
           "grades": ["304/304L", "316/316L", "ASTM A312", "ASTM SA312"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "length": "As per requirement",
             "width": "1000mm - 2000mm",
@@ -209,7 +209,7 @@
           "description": "Stainless Steel Electric Resistance Welded (ERW) Pipes are known for their high durability and corrosion resistance, suitable for structural and piping applications.",
           "brands": ["JSL", "SAIL"],
           "grades": ["304/304L", "316/316L", "ASTM A312", "ASTM SA312"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "length": "Up to 26 meters",
             "diameter": "1/8” NB to 36” NB, 1/4” OD to 36” OD",
@@ -224,7 +224,7 @@
           "description": "Stainless Steel (SS) round bars are cylindrical metal bars made from high-quality stainless steel, known for their exceptional strength, durability, and corrosion resistance.",
           "brands": ["JSL", "SAIL"],
           "grades": ["304/304L", "316/316L"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "length": "As per requirement",
             "diameter": "3 mm to 450 mm"
@@ -237,7 +237,7 @@
           "description": "SS square bars are high-quality metal bars with a square cross-section, known for their exceptional strength, durability, and corrosion resistance.",
           "brands": ["SAIL", "JSL"],
           "grades": ["EN 10272", "EN 10088-3 Grade 304", "316", "304L", "316L"],
-          "customizations": "None",
+          "customizations": ["None"],
           "specification": {
             "thickness": "6mm to 150mm"
           }

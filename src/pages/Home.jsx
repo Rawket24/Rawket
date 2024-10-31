@@ -2,6 +2,38 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 const Home = () => {
+  const industries = [
+    {
+      title: "Infra & Construction",
+      image: "/home/cons.jpeg",
+      alt: "Construction site with crane and building structure",
+    },
+    {
+      title: "Electric Vehicles",
+      image: "/home/ev.jpeg",
+      alt: "Electric vehicle charging station",
+    },
+    {
+      title: "Machinery & Equipment",
+      image: "/home/im.png",
+      alt: "Industrial machinery",
+    },
+    {
+      title: "Defence & Aerospace",
+      image: "/home/da.jpeg",
+      alt: "Aerospace equipment maintenance",
+    },
+    {
+      title: "Oil & Gas",
+      image: "/home/oilgas.jpeg",
+      alt: "Oil and gas refinery",
+    },
+    {
+      title: "Renewable Energy",
+      image: "/home/re.jpeg",
+      alt: "Solar panels and wind turbine",
+    },
+  ];
   return (
     <div>
       <div>
@@ -151,7 +183,35 @@ const Home = () => {
             <Slider />
           </div>
         </section>
-        <section></section>
+        <section>
+          <div className="container mx-auto px-4 py-16">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+              Industries we Serve
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {industries.map((industry, index) => (
+                <div
+                  key={index}
+                  className="group flex flex-col items-center transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <div className="relative overflow-hidden rounded-lg shadow-lg w-full aspect-[4/3]">
+                    <img
+                      src={industry.image}
+                      alt={industry.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-300 group-hover:bg-opacity-30" />
+                  </div>
+
+                  <h3 className="mt-4 text-xl font-bold text-black text-center">
+                    {industry.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
