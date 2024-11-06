@@ -70,33 +70,31 @@ const Home = () => {
           </div>
         </section>
         <section className="py-5">
-          <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+          <div className="container mx-auto px-4 md:px-6 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-black">
               Our Services
             </h2>
-            <p className="text-gray-600 mb-12">
+            <p className="text-gray-600 mb-8 sm:mb-10 md:mb-12">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio
               in et, lectus sit lorem id integer.
             </p>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 md:gap-8">
               {/* Service 1 */}
-              <div className="bg-[#F4F6FA] py-6 pl-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-[150px] md:h-[300px]">
-                <div className="flex-[0.6]">
+              <div className="bg-[#F4F6FA] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-auto sm:h-[200px] lg:h-[250px] xl:h-[300px]">
+                <div className="flex-[0.5] lg:flex-[0.6] w-full sm:w-auto">
                   <img
                     src="/Images/fab.png"
                     alt="Fabrication"
-                    width={200}
-                    height={200}
-                    className="w-full"
+                    className="w-full max-w-[150px] sm:max-w-[180px] md:max-w-[200px]"
                   />
                 </div>
-                <div className="flex-1 mt-4 md:mt-0 md:pl-4 text-left">
-                  <h3 className="text-[24px] text-black font-bold mb-2">
+                <div className="flex-1 mt-4 md:mt-0 md:pr-4 text-left">
+                  <h3 className="text-[20px] md:text-[24px] text-black font-bold mb-2">
                     Fabrication
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc odio in et, lectus sit lorem id integer.
                   </p>
@@ -104,21 +102,19 @@ const Home = () => {
               </div>
 
               {/* Service 2 */}
-              <div className="bg-[#F4F6FA] py-6 pl-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-[150px] md:h-[300px]">
-                <div className="flex-[0.6]">
+              <div className="bg-[#F4F6FA] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-auto sm:h-[200px] lg:h-[250px] xl:h-[300px]">
+                <div className="flex-[0.5] lg:flex-[0.6] w-full sm:w-auto">
                   <img
                     src="/Images/recycle.png"
                     alt="Recycling"
-                    width={200}
-                    height={200}
-                    className="w-full"
+                    className="w-full max-w-[150px] sm:max-w-[180px] md:max-w-[200px]"
                   />
                 </div>
-                <div className="flex-1 mt-4 md:mt-0 md:pl-4 text-left">
-                  <h3 className="text-[24px] text-black font-bold mb-2">
+                <div className="flex-1 mt-4 md:mt-0 md:pr-4 text-left">
+                  <h3 className="text-[20px] md:text-[24px] text-black font-bold mb-2">
                     Recycling
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc odio in et, lectus sit lorem id integer.
                   </p>
@@ -126,21 +122,19 @@ const Home = () => {
               </div>
 
               {/* Service 3 */}
-              <div className="bg-[#F4F6FA] py-6 pl-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-[150px] md:h-[300px]">
-                <div className="flex-[0.6]">
+              <div className="bg-[#F4F6FA] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-auto sm:h-[200px] lg:h-[250px] xl:h-[300px]">
+                <div className="flex-[0.5] lg:flex-[0.6] w-full sm:w-auto">
                   <img
                     src="/Images/delivery.png"
                     alt="Delivery"
-                    width={200}
-                    height={200}
-                    className="w-full"
+                    className="w-full max-w-[150px] sm:max-w-[180px] md:max-w-[200px]"
                   />
                 </div>
-                <div className="flex-1 mt-4 md:mt-0 md:pl-4 text-left">
-                  <h3 className="text-[24px] text-black font-bold mb-2">
+                <div className="flex-1 mt-4 md:mt-0 md:pr-4 text-left">
+                  <h3 className="text-[20px] md:text-[24px] text-black font-bold mb-2">
                     Delivery
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc odio in et, lectus sit lorem id integer.
                   </p>
@@ -148,21 +142,19 @@ const Home = () => {
               </div>
 
               {/* Service 4 */}
-              <div className="bg-[#F4F6FA] py-6 pl-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-[150px] md:h-[300px]">
-                <div className="flex-[0.6]">
+              <div className="bg-[#F4F6FA] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse justify-between items-center h-auto sm:h-[200px] lg:h-[250px] xl:h-[300px]">
+                <div className="flex-[0.5] lg:flex-[0.6] w-full sm:w-auto">
                   <img
                     src="/Images/fab.png"
                     alt="Custom Service"
-                    width={200}
-                    height={200}
-                    className="w-full"
+                    className="w-full max-w-[150px] sm:max-w-[180px] md:max-w-[200px]"
                   />
                 </div>
-                <div className="flex-1 mt-4 md:mt-0 md:pl-4 text-left">
-                  <h3 className="text-[24px] text-black font-bold mb-2">
+                <div className="flex-1 mt-4 md:mt-0 md:pr-4 text-left">
+                  <h3 className="text-[20px] md:text-[24px] text-black font-bold mb-2">
                     Finance
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc odio in et, lectus sit lorem id integer.
                   </p>
@@ -171,6 +163,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+
         <section>
           <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">

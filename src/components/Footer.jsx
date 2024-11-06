@@ -48,28 +48,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Middle Section: Links */}
-        <div className="mb-6 md:mb-0">
-          <h4 className="font-semibold mb-3">Главная</h4>
-          <ul>
-            <li className="mb-2">
-              <a href="#">Это мы</a>
-            </li>
-            <li className="mb-2">
-              <a href="#">Кто мы</a>
-            </li>
-            <li className="mb-2">
-              <a href="#">Почему мы?</a>
-            </li>
-            <li className="mb-2">
-              <a href="#">Остались вопросы</a>
-            </li>
-            <li>
-              <a href="#">Контакты</a>
-            </li>
-          </ul>
-        </div>
-
         {/* Right Section: Contacts */}
         <div className="mb-6 md:mb-0">
           <h4 className="font-semibold mb-3">Контакты</h4>

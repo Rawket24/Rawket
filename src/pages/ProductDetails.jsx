@@ -45,39 +45,43 @@ const ProductDetail = () => {
   }
   return (
     <div>
-      <div className="text-center font-bold text-[40px] text-myblue pt-10">
+      <div className="text-center font-bold text-[32px] md:text-[40px] text-myblue pt-10">
         Product Details
       </div>
-      <div className="max-w-[75vw] mx-auto p-6">
-        <div className="bg-white rounded-lg shadow-md border-[1px] p-8">
-          <div className="flex flex-row gap-10 justify-center items-start">
+      <div className="w-full max-w-[90vw] sm:max-w-[75vw] mx-auto p-4 sm:p-6">
+        <div className="bg-white rounded-lg shadow-md border-[1px] p-6 sm:p-8">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-10 justify-center items-center md:items-start">
             <img
               src={product.image}
               alt={product.name}
-              className="flex-1 rounded-lg mb-4 h-[500px] w-[500px]"
+              className="rounded-lg mb-4 w-full h-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px]"
             />
-            <div className="flex-1 flex flex-col">
-              <h2 className="text-[40px] font-bold mb-4">{product.name}</h2>
+            <div className="flex-1 flex flex-col w-full">
+              <h2 className="text-[28px] md:text-[40px] font-bold mb-4">
+                {product.name}
+              </h2>
 
-              <p className="text-gray-700 mb-4 p-3 rounded-lg border-[1px]  bg-gray-200">
+              <p className="text-gray-700 mb-4 p-3 rounded-lg border-[1px] bg-gray-200">
                 {product.description}
               </p>
-              <p className="text-gray-900 text-lg font-semibold mb-4">
-                Category:{" "}
-                <span className="font-normal text-white  rounded-md px-4 py-1 bg-myblue">
+
+              <p className="text-gray-900 text-md md:text-lg font-semibold mb-4">
+                Category:
+                <span className="ml-1 text-black rounded-md px-4 py-1 capitalize font-semibold border-[1px] border-gray-400">
                   {category}
                 </span>
               </p>
-              <div className="flex flex-row ">
-                <div className="text-lg font-semibold mb-2 mr-2">
+
+              <div className="flex flex-row flex-wrap">
+                <div className="text-md md:text-lg font-semibold mb-2 mr-2">
                   Specifications:
                 </div>
-                <ul className="flex flex-row gap-2 mb-4 ">
+                <ul className="flex flex-col gap-2 mb-4">
                   {Object.entries(product.specification).map(
                     ([key, value], index) => (
                       <div
                         key={index}
-                        className="text-white  rounded-md px-4 py-1 bg-myblue"
+                        className="text-black border-[1px] border-gray-400 rounded-md px-4 py-1 capitalize font-semibold"
                       >
                         {key}: {Array.isArray(value) ? value.join(", ") : value}
                       </div>
@@ -85,41 +89,48 @@ const ProductDetail = () => {
                   )}
                 </ul>
               </div>
-              <div className="flex flex-row">
-                <div className="text-lg font-semibold mb-2 mr-2">Brands:</div>
-                <ul className="flex flex-row gap-2 mb-4">
+
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="text-md md:text-lg font-semibold mb-2 mr-2">
+                  Brands:
+                </div>
+                <ul className="flex flex-wrap gap-2 mb-4">
                   {product.brands.map((brand, index) => (
                     <div
                       key={index}
-                      className="text-white  rounded-md px-4 py-1 bg-myblue"
+                      className="text-black rounded-md px-4 py-1 capitalize font-semibold border-[1px] border-gray-400"
                     >
                       {brand}
                     </div>
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-row">
-                <div className="text-lg font-semibold mb-2 mr-2">Grades:</div>
+
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="text-md md:text-lg font-semibold mb-2 mr-2">
+                  Grades:
+                </div>
                 <ul className="flex flex-wrap gap-2 mb-4">
                   {product.grades.map((grade, index) => (
                     <div
                       key={index}
-                      className="text-white  rounded-md px-4 py-1 bg-myblue"
+                      className="text-black rounded-md px-4 py-1 capitalize font-semibold border-[1px] border-gray-400"
                     >
                       {grade}
                     </div>
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-row">
-                <div className="text-lg font-semibold mb-2 mr-2">
+
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="text-md md:text-lg font-semibold mb-2 mr-2">
                   Customizations:
                 </div>
                 <ul className="flex flex-wrap gap-2 mb-4">
                   {product.customizations.map((cust, index) => (
                     <div
                       key={index}
-                      className="text-white  rounded-md px-4 py-1 bg-myblue"
+                      className="text-black rounded-md px-4 py-1 capitalize font-semibold border-[1px] border-gray-400"
                     >
                       {cust}
                     </div>
@@ -130,6 +141,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+
       <div>
         <QueryForm productname={product.name} />
       </div>
