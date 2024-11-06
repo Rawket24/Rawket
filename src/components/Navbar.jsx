@@ -242,52 +242,124 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center text-base font-medium">
-            <Link to="/about">
-              <div className="text-gray-700 hover:text-gray-900">About Us</div>
+        <div className="md:hidden bg-white border-t border-gray-200 py-4">
+          <div className="px-4 space-y-4 text-base font-medium text-gray-700">
+            <Link
+              to="/"
+              onClick={toggleMenu}
+              className="block hover:text-gray-900"
+            >
+              Home
             </Link>
-            <Link to="/products">
-              <div className="text-gray-700 hover:text-gray-900">Product</div>
+            <Link
+              to="/about"
+              onClick={toggleMenu}
+              className="block hover:text-gray-900"
+            >
+              About Us
+            </Link>
+            <Link
+              to="/products"
+              onClick={toggleMenu}
+              className="block hover:text-gray-900"
+            >
+              Product
             </Link>
 
-            {/* Mobile Services Dropdown */}
+            {/* Services Dropdown in Mobile Menu */}
             <div className="relative">
               <button
                 onClick={toggleDropdown}
-                className="text-gray-700 hover:text-gray-900 focus:outline-none"
+                className="w-full text-left flex flex-row justify-between items-center hover:text-gray-900 focus:outline-none"
               >
-                Services
+                <div>Services</div>
+                <MdKeyboardArrowDown
+                  className={`${isDropdownOpen ? "transform rotate-180" : ""}`}
+                />
               </button>
               {isDropdownOpen && (
-                <div className="mt-2 w-48 bg-white border border-gray-200 shadow-lg z-10">
+                <div className="mt-2 space-y-2">
                   <Link
-                    to="/services/design"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    to="/services/fabrication"
+                    onClick={() => {
+                      setNav("fab");
+                      setIsDropdownOpen(false);
+                      toggleMenu();
+                    }}
+                    className={`block px-4 py-2 text-gray-700 ${
+                      nav === "fab" ? "bg-gray-100" : "hover:bg-gray-100"
+                    }`}
                   >
-                    Design
+                    Fabrication
                   </Link>
                   <Link
-                    to="/services/development"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    to="/services/recycling"
+                    onClick={() => {
+                      setNav("rec");
+                      setIsDropdownOpen(false);
+                      toggleMenu();
+                    }}
+                    className={`block px-4 py-2 text-gray-700 ${
+                      nav === "rec" ? "bg-gray-100" : "hover:bg-gray-100"
+                    }`}
                   >
-                    Development
+                    Recycling
                   </Link>
                   <Link
-                    to="/services/marketing"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    to="/services/delivery"
+                    onClick={() => {
+                      setNav("del");
+                      setIsDropdownOpen(false);
+                      toggleMenu();
+                    }}
+                    className={`block px-4 py-2 text-gray-700 ${
+                      nav === "del" ? "bg-gray-100" : "hover:bg-gray-100"
+                    }`}
                   >
-                    Marketing
+                    Delivery
+                  </Link>
+                  <Link
+                    to="/services/finances"
+                    onClick={() => {
+                      setNav("fin");
+                      setIsDropdownOpen(false);
+                      toggleMenu();
+                    }}
+                    className={`block px-4 py-2 text-gray-700 ${
+                      nav === "fin" ? "bg-gray-100" : "hover:bg-gray-100"
+                    }`}
+                  >
+                    Finances
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link to="/contact">
-              <div className="text-gray-700 hover:text-gray-900">
-                Contact Us
-              </div>
+            <Link
+              to="/contact"
+              onClick={toggleMenu}
+              className="block hover:text-gray-900"
+            >
+              Contact Us
             </Link>
+
+            <div>
+              {!signIn ? (
+                <div
+                  id="signin"
+                  className="flex items-center justify-center"
+                ></div>
+              ) : (
+                <div className="flex items-center gap-4">
+                  <img
+                    src={user.profile_pic}
+                    alt="User profile"
+                    className="h-10 w-10 rounded-full"
+                  />
+                  <span>{user.name}</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

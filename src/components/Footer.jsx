@@ -5,62 +5,80 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdMailOutline } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
-import { FaLocationArrow } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
-        {/* Left Section: Logo */}
+        {/* Left Section: Logo and Contact Information */}
         <div className="mb-6 md:mb-0 flex flex-col gap-2">
           <div className="text-2xl md:text-[48px] text-myblue font-black">
             OkSent
           </div>
           <div className="flex flex-row gap-1 items-start text-sm pt-8">
-            <a className="text-wrap">
+            <address className="not-italic">
               100 Feet Ring Road, <br />
               Banashankari Stage III, Dwaraka Nagar,
               <br />
               Banashankari, Bengaluru, Karnataka 560085
-            </a>
+            </address>
           </div>
           <div className="flex flex-row gap-1 items-center text-sm">
             <IconContext.Provider value={{ color: "white", size: "1em" }}>
               <MdMailOutline />
             </IconContext.Provider>
-            <a>oksent@gmail.com</a>
+            <a href="mailto:oksent@gmail.com">oksent@gmail.com</a>
           </div>
           <div className="flex flex-row gap-1 items-center text-sm">
             <IconContext.Provider value={{ color: "white", size: "1em" }}>
               <IoIosCall />
             </IconContext.Provider>
-            <a>+91 9999999999</a>
+            <a href="tel:+919999999999">+91 9999999999</a>
           </div>
           <div className="flex flex-row gap-2 pt-5">
             <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
-              <FaLinkedin />
+              <a href="#" aria-label="LinkedIn">
+                <FaLinkedin />
+              </a>
             </IconContext.Provider>
             <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
-              <IoLogoWhatsapp />
+              <a href="#" aria-label="WhatsApp">
+                <IoLogoWhatsapp />
+              </a>
             </IconContext.Provider>
             <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
-              <FaXTwitter />
+              <a href="#" aria-label="Twitter">
+                <FaXTwitter />
+              </a>
             </IconContext.Provider>
           </div>
         </div>
 
-        {/* Right Section: Contacts */}
+        {/* Navigation Links */}
         <div className="mb-6 md:mb-0">
-          <h4 className="font-semibold mb-3">Контакты</h4>
-          <ul>
-            <li className="mb-2">+7 (708) 802 88 88</li>
-            <li className="mb-2">+7 (708) 803 88 88</li>
-            <li className="mb-2">+7 (708) 51 51 518</li>
-            <li className="mb-2">+7 (700) 51 51 518</li>
-            <li className="mb-2">
-              <i className="fab fa-whatsapp"></i> +7 (708) 802 88 88
+          <h4 className="font-semibold mb-3">Check these out!</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link to="/" className="hover:underline">
+                Home
+              </Link>
             </li>
             <li>
-              <i className="fas fa-map-marker-alt"></i> г. Бишкек, ул. Ляляля 69
+              <Link to="/about" className="hover:underline">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/products" className="hover:underline">
+                Products
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/contact" className="hover:underline">
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>
