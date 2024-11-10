@@ -51,11 +51,7 @@ const Footer = () => {
                 <FaXTwitter />
               </a>
             </IconContext.Provider>
-           <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
-  <a href="#" aria-label="Instagram">
-    <FaInstagram/>
-  </a>
-</IconContext.Provider>
+         
           </div>
         </div>
 
