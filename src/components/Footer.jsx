@@ -2,6 +2,7 @@ import React from "react";
 import { IconContext } from "react-icons";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdMailOutline } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
