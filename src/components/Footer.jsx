@@ -52,11 +52,11 @@ const Footer = () => {
                 <FaXTwitter />
               </a>
             </IconContext.Provider>
-            <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
-              <a href="#" aria-label="Instagram">
-                <FaXTwitter />
-              </a>
-            </IconContext.Provider>
+           <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+  <a href="#" aria-label="Instagram">
+    <FaInstagram />
+  </a>
+</IconContext.Provider>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ const Footer = () => {
 
       {/* Footer Bottom Section */}
       <div className="text-center border-t border-gray-700 mt-8 pt-4">
-        <p>Copyright © OKSENT 2024. All rights reserved.</p>
+        <p>Copyright © Rawket Materials and services 2024. All rights reserved.</p>
       </div>
     </footer>
   );
