@@ -95,7 +95,7 @@ const Navbar = () => {
             <Link to="/" className="flex flex-row items-center gap-3">
               <img src="/Images/logo.png" className="h-12 rounded-full " />
               <div className="text-2xl md:text-[48px] text-myblue font-black">
-                Rawket
+                SourceBook
               </div>
             </Link>
           </div>
