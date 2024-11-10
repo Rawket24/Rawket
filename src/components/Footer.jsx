@@ -19,7 +19,6 @@ const Footer = () => {
           <div className="flex flex-row gap-1 items-start text-sm pt-8">
             <address className="not-italic">
               Mysore Road, <br />
-  
               <br />
               Bengaluru, Karnataka 560026
             </address>
@@ -54,7 +53,7 @@ const Footer = () => {
             </IconContext.Provider>
            <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
   <a href="#" aria-label="Instagram">
-    <FaInstagram />
+    <FaInstagram/>
   </a>
 </IconContext.Provider>
           </div>
