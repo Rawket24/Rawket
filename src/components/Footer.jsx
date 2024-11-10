@@ -18,23 +18,23 @@ const Footer = () => {
           </div>
           <div className="flex flex-row gap-1 items-start text-sm pt-8">
             <address className="not-italic">
-              100 Feet Ring Road, <br />
-              Banashankari Stage III, Dwaraka Nagar,
+              Mysore Road, <br />
+  
               <br />
-              Banashankari, Bengaluru, Karnataka 560085
+              Bengaluru, Karnataka 560026
             </address>
           </div>
           <div className="flex flex-row gap-1 items-center text-sm">
             <IconContext.Provider value={{ color: "white", size: "1em" }}>
               <MdMailOutline />
             </IconContext.Provider>
-            <a href="mailto:oksent@gmail.com">oksent@gmail.com</a>
+            <a href="mailto:oksent@gmail.com">varunrao2408@gmail.com</a>
           </div>
           <div className="flex flex-row gap-1 items-center text-sm">
             <IconContext.Provider value={{ color: "white", size: "1em" }}>
               <IoIosCall />
             </IconContext.Provider>
-            <a href="tel:+919999999999">+91 9999999999</a>
+            <a href="tel:+919999999999">+91-8618842120</a>
           </div>
           <div className="flex flex-row gap-2 pt-5">
             <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
@@ -49,6 +49,11 @@ const Footer = () => {
             </IconContext.Provider>
             <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
               <a href="#" aria-label="Twitter">
+                <FaXTwitter />
+              </a>
+            </IconContext.Provider>
+            <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+              <a href="#" aria-label="Instagram">
                 <FaXTwitter />
               </a>
             </IconContext.Provider>
