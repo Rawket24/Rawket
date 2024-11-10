@@ -45,9 +45,7 @@ const Home = () => {
                 Your One-Stop Solution <br /> for Metal Procurement
               </h1>
               <p className="text-lg text-gray-600 mb-10">
-                Helping companies cut costs and streamline operations. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio in
-                et, lectus sit lorem id integer.
+                Helping companies cut costs and streamline operations
               </p>
               <a
                 href="#"
