@@ -14,12 +14,11 @@ const Footer = () => {
         {/* Left Section: Logo and Contact Information */}
         <div className="mb-6 md:mb-0 flex flex-col gap-2">
           <div className="text-2xl md:text-[48px] text-myblue font-black">
-            OkSent
+            SourceBook
           </div>
           <div className="flex flex-row gap-1 items-start text-sm pt-8">
             <address className="not-italic">
-              Mysore Road, <br />
-              <br />
+              Mysore Road,
               Bengaluru, Karnataka 560026
             </address>
           </div>
@@ -51,6 +50,13 @@ const Footer = () => {
                 <FaXTwitter />
               </a>
             </IconContext.Provider>
+
+            <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+  <a href="#" aria-label="Instagram">
+    <FaInstagram />
+  </a>
+</IconContext.Provider>
+
          
           </div>
         </div>
