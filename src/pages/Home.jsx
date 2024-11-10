@@ -75,8 +75,7 @@ const Home = () => {
               Our Services
             </h2>
             <p className="text-gray-600 mb-8 sm:mb-10 md:mb-12">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio
-              in et, lectus sit lorem id integer.
+             
             </p>
 
             {/* Services Grid */}
@@ -95,8 +94,7 @@ const Home = () => {
                     Fabrication
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc odio in et, lectus sit lorem id integer.
+               Transform raw metals into tailored solutions with our expert fabrication services
                   </p>
                 </div>
               </div>
@@ -115,8 +113,7 @@ const Home = () => {
                     Recycling
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc odio in et, lectus sit lorem id integer.
+                   Maximize sustainability with our streamlined metal recycling services
                   </p>
                 </div>
               </div>
@@ -132,11 +129,10 @@ const Home = () => {
                 </div>
                 <div className="flex-1 mt-4 md:mt-0 md:pr-4 text-left">
                   <h3 className="text-[20px] md:text-[24px] text-black font-bold mb-2">
-                    Delivery
+                    Logistics
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc odio in et, lectus sit lorem id integer.
+                    Efficient and reliable logistics for seamless metal delivery
                   </p>
                 </div>
               </div>
@@ -155,8 +151,7 @@ const Home = () => {
                     Finance
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc odio in et, lectus sit lorem id integer.
+                    Flexible financing for your metal procurement needs
                   </p>
                 </div>
               </div>
@@ -170,8 +165,7 @@ const Home = () => {
               Our Categories
             </h2>
             <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio
-              in et, lectus sit lorem id integer.
+            
             </p>
             <Slider />
           </div>
